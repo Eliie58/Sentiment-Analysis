@@ -16,6 +16,7 @@ def main():
 
     texts = ['I am so happy', 'I am so sad']
     predictions = predict(texts, model, feature_engineering)
+    logging.info('Inputs are : %s', texts)
     logging.info('Predictions are : %s', predictions)
 
 
