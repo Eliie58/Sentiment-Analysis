@@ -61,6 +61,41 @@ Sentiment analysis using ML
 
 Our project is a Sentiment Analysis Machine Learning project, built using nltk and RandomForestClassifier. The project aims to create an ML model that takes as input a sentence, and tries to predict the sentiment in the sentence, positive or negative.
 
+### Goal or problem to solve:
+The goal of our Sentiment Analysis Machine Learning project is to develop an ML model that can accurately predict the sentiment of a sentence as positive or negative. The model can help solve several problems for businesses or organizations, such as:
+- Our model can assist firms in analyzing customer feedback, social media comments, or product evaluations to ascertain how their clients feel about their goods, services, or brand.
+- In order to better fulfill consumer requirements and preferences, organizations can discover areas where their products or services need to be improved by evaluating client sentiment.
+- Enhancing marketing initiatives: Our model can assist companies in better understanding how consumers feel about their advertising and promotional initiatives, allowing them to better target their marketing campaigns.
+- Analyzing consumer opinion on social media, review websites, and other sources, our model can assist firms in monitoring their brand reputation.
+
+### Who are your customer/users who will benefit/use our project, model, model output:
+Organizations interested in examining customer feedback, comments on social media, or product evaluations to learn more about customer sentiment may be possible clients for our Sentiment Analysis Machine Learning project. These businesses may be involved in a range of sectors, including retail, hospitality, healthcare, and finance.
+For example, an e-commerce company might use your sentiment analysis model to analyze customer reviews of their products and identify which products are popular and why. A hospitality company might use it to analyze feedback from guests to identify areas for improvement in their service.
+
+### Datasets that we will use for our use case and their source: 
+https://www.kaggle.com/datasets/praveengovi/emotions-dataset-for-nlp
+
+### Project management framework we prefer to use:
+The choice of a project management framework will be influenced by a number of variables, including the scope and complexity of the project, the resources at hand, and the experience and expertise of the project team. However, one project management structure that can be helpful for a Sentiment Analysis Machine Learning project is the Agile technique.
+Agile is a project management methodology that places a focus on continuous delivery, iterative and incremental development, and customer collaboration. It is renowned for its flexibility and adaptability and is highly suited for projects with intricate requirements that change quickly, like machine learning programs.
+In an Agile project, the project team works in brief iterations, usually lasting two to four weeks, to incrementally provide usable software. Based on input from the stakeholders and the project's development, the project's requirements and scope are continuously reviewed and modified. To prioritize and complete tasks, the project team members collaborate and self-organize.
+Scrum, Kanban, and Extreme Programming are three common Agile frameworks (XP). Scrum is a well-known Agile methodology with well defined roles, ceremonies, and artifacts that employs sprints to manage the project. Another Agile methodology, Kanban, places a strong emphasis on visual management and continuous flow, making it a good fit for projects involving machine learning.
+In conclusion, Agile can be a good project management framework for your Sentiment Analysis Machine Learning project, and Scrum or Kanban can be prospective Agile frameworks to examine.
+
+### Team organization and roles:
+Project Manager: responsible for overseeing the project and ensuring that it is delivered on time.
+Data Scientist: responsible for developing the machine learning model and selecting the appropriate algorithms and techniques to achieve the project goals.
+Data Engineer: responsible for managing the data pipeline and ensuring that the data is cleaned, preprocessed, and ready for analysis.
+Quality Assurance (QA) Analyst: responsible for testing the model and ensuring that it meets the required quality standards.
+Business Analyst: responsible for defining the business requirements.
+
+
+
+
+
+
+
+
 ## Techinal Part
 
 ### Requiremenets
