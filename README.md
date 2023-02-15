@@ -154,3 +154,7 @@ curl http://127.0.0.1:1234/invocations -H 'Content-Type: application/json' -d '{
 ```
 
 ![Mlflow served on REST](mlflow_rest.png "MLFlow served on REST").
+
+## SHAP
+
+SHAP analysis was performed on the model and the data, and results are available [in this notebook](notebooks/SHAP.ipynb)
