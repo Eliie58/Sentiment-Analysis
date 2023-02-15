@@ -18,3 +18,4 @@ scikit-plot==0.3.7
 sphinx
 mlflow==2.1.1
 virtualenv
+shap==0.41.0
