@@ -1,0 +1,29 @@
+name: Sentiment Analysis
+
+python_env: python_env.yaml
+
+entry_points:
+  main:
+    parameters:
+      path:
+        type: str
+        default: data/raw/train.txt
+      max_features:
+        type: str
+        default: sqrt
+      n_estimators:
+        type: int
+        default: 50
+      max_depth:
+        type: int
+        default: None
+      min_samples_split:
+        type: int
+        default: 5
+      min_samples_leaf:
+        type: int
+        default: 1
+      bootstrap:
+        type: boolean
+        default: True
+    command: "python train.py {path} {max_features} {n_estimators} {max_depth} {min_samples_split} {min_samples_leaf} {bootstrap}"
