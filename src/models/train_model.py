@@ -10,7 +10,7 @@ from typing import Dict, Tuple
 from sklearn.model_selection import GridSearchCV
 from sklearn.ensemble import RandomForestClassifier
 
-from ..features.build_features import FeatureEngineer
+from ..features.build_features import custom_encoder, FeatureEngineer
 
 logging.basicConfig(level=logging.INFO)
 
@@ -39,7 +39,8 @@ def train_model(data: pd.DataFrame,
     feature_engineer = FeatureEngineer()
     feature_engineer.fit(texts)
 
-    texts, labels = feature_engineer.transform(texts, labels)
+    texts = feature_engineer.transform(texts, labels)
+    labels = custom_encoder(labels)
 
     grid_search = GridSearchCV(RandomForestClassifier(
     ), parameters, cv=2, return_train_score=True, n_jobs=-1, verbose=4)

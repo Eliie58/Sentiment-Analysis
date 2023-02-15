@@ -93,6 +93,8 @@ Two pickle files will be created in the root of the folder:
 - classifier.pkl: The trained RandomForestClassifier.
 - feature_engineer.pkl: The feature engineering class to be used for before inference.
 
+![Training results](train_predict.png "Training results").
+
 #### Data
 
 The data used for training the model is a txt file placed under [this folder](data/raw/), called train.csv with the following format:
@@ -117,3 +119,38 @@ The documentation are generated under [here](docs/build/html/index.html)
 #### ML Schduling
 
 In order to schedule the retraining of the module, our proposed solution is using airflow to create a dag that every set period of time (1 day, 1 wekk, ...) fetchs the latest version of the data, and overrides the train.txt file under [here](data/raw/). Next step in the dag is executing `make train_predict` to create a new trained model on the latest training data.
+
+### MLFlow
+
+We integrated MLFlow into our project in order to track our experiments, and find best parameters and scores.
+
+#### Train model with mlflow
+
+To train the model with mlflow enabled you can run:
+
+- `python train.py`
+- `mlflow run . -P max_depth=2 --env-manager=local`
+
+#### View Experiment Results
+
+To view the experiment results, run `mlflow ui`, and navigate to `http://localhost:5000`
+
+![MLFlow Tracked models](mlflow_models.png "MLFLow Tracked models") .
+
+#### Model deployment
+
+To deploy the trained model, all you have to do is get the path of the pipeline artifact, and run
+
+```
+mlflow models serve -m <path> -p 1234
+```
+
+To call the endpoint:
+
+```
+curl http://127.0.0.1:1234/invocations -H 'Content-Type: application/json' -d '{
+  "instances": ["I am so happy", "I am so sad"]
+}'
+```
+
+![Mlflow served on REST](mlflow_rest.png "MLFlow served on REST").

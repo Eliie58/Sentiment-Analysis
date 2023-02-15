@@ -2,7 +2,7 @@
 Module for Building features
 """
 import re
-from typing import List, Tuple
+from typing import List
 
 import pandas as pd
 import nltk
@@ -64,18 +64,23 @@ class FeatureEngineer:
     def __init__(self):
         self.count_vectorizer = CountVectorizer(ngram_range=(1, 2))
 
-    def fit(self, texts: pd.Series) -> None:
+    def fit(self, texts: pd.Series, labels: pd.Series = None):
         """
         Fit the Count Vectorizer on the input texts.
 
         :param texts: Input texts used for fitting.
         :type texts: Pandas series.
+        :param labels: Input labels for transformation.
+        :type labels: Pandas series.
+        :return: Return the fitted Feature Engineer
+        :rtype: FeatureEngineer
         """
         corpus = text_transformation(texts)
         self.count_vectorizer.fit(corpus)
+        return self
 
     def transform(self, texts: pd.Series,
-                  labels: pd.Series = None) -> Tuple[pd.Series, List]:
+                  labels: pd.Series = None) -> pd.Series:
         """
         Apply transformation on the input texts and labels.
 
@@ -83,13 +88,10 @@ class FeatureEngineer:
         :type texts: Pandas series.
         :param labels: Input labels for transformation.
         :type labels: Pandas series.
-        :return: The transformed texts and labels
-        :rtype: Tuple
+        :return: The transformed texts
+        :rtype: Pandas Series
         """
         corpus = text_transformation(texts)
         texts = self.count_vectorizer.transform(corpus)
 
-        if labels is not None:
-            labels = custom_encoder(labels)
-
-        return texts, labels
+        return texts

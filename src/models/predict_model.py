@@ -31,7 +31,7 @@ def predict(texts: List,
     if feature_engineer is None:
         feature_engineer = joblib.load('feature_engineer.pkl')
 
-    texts, _ = feature_engineer.transform(texts)
+    texts = feature_engineer.transform(texts)
 
     predictions = model.predict(texts)
 

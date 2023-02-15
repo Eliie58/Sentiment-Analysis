@@ -16,3 +16,5 @@ nltk==3.8.1
 scikit-learn==1.2.1
 scikit-plot==0.3.7
 sphinx
+mlflow==2.1.1
+virtualenv
